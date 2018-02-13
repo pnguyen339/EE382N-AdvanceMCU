@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="BlockRam_processing_system7_0_0_synth_1" LaunchDir="/home/dratini/Documents/GitHub/EE382N-AdvanceMCU/project_1/project_1.runs/BlockRam_processing_system7_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="BlockRam_proc_sys_reset_0_0_synth_1" LaunchDir="/home/dratini/Documents/GitHub/EE382N-AdvanceMCU/project_1/project_1.runs/BlockRam_proc_sys_reset_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="BlockRam_axi_bram_ctrl_0_1_synth_1" LaunchDir="/home/dratini/Documents/GitHub/EE382N-AdvanceMCU/project_1/project_1.runs/BlockRam_axi_bram_ctrl_0_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="BlockRam_axi_bram_ctrl_0_2_synth_1" LaunchDir="/home/dratini/Documents/GitHub/EE382N-AdvanceMCU/project_1/project_1.runs/BlockRam_axi_bram_ctrl_0_2_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado" IsOrderedIPRun="true">
+		<Parent Id="BlockRam_axi_bram_ctrl_0_1_synth_1"/>
+	</Run>
+	<Run Id="BlockRam_axi_gpio_0_0_synth_1" LaunchDir="/home/dratini/Documents/GitHub/EE382N-AdvanceMCU/project_1/project_1.runs/BlockRam_axi_gpio_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="BlockRam_blk_mem_gen_0_0_synth_1" LaunchDir="/home/dratini/Documents/GitHub/EE382N-AdvanceMCU/project_1/project_1.runs/BlockRam_blk_mem_gen_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="BlockRam_xbar_0_synth_1" LaunchDir="/home/dratini/Documents/GitHub/EE382N-AdvanceMCU/project_1/project_1.runs/BlockRam_xbar_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="BlockRam_auto_pc_0_synth_1" LaunchDir="/home/dratini/Documents/GitHub/EE382N-AdvanceMCU/project_1/project_1.runs/BlockRam_auto_pc_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="BlockRam_auto_pc_1_synth_1" LaunchDir="/home/dratini/Documents/GitHub/EE382N-AdvanceMCU/project_1/project_1.runs/BlockRam_auto_pc_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+</Runs>
+

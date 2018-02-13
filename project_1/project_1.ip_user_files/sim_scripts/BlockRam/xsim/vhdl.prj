@@ -1,0 +1,7 @@
+vhdl xil_defaultlib  \
+"../../../bd/BlockRam/ip/BlockRam_proc_sys_reset_0_0/sim/BlockRam_proc_sys_reset_0_0.vhd" \
+"../../../bd/BlockRam/ip/BlockRam_axi_bram_ctrl_0_1/sim/BlockRam_axi_bram_ctrl_0_1.vhd" \
+"../../../bd/BlockRam/ip/BlockRam_axi_bram_ctrl_0_2/sim/BlockRam_axi_bram_ctrl_0_2.vhd" \
+"../../../bd/BlockRam/ip/BlockRam_axi_gpio_0_0/sim/BlockRam_axi_gpio_0_0.vhd" \
+
+nosort
