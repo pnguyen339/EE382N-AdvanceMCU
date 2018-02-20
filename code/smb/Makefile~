@@ -1,0 +1,22 @@
+
+
+KDIR= /home/mcdermot/yocto_kernel/
+LIBPATH=$(KDIR)/lib
+INCPATH=$(KDIR)/include
+
+CC := arm-poky-linux-gnueabi-gcc 
+
+//obj-m	:= mx21_gpio.o
+
+//KDIR	:= /home/mcdermot/yocto_kernel/
+
+PWD		:= $(shell pwd)
+CFLAGS=  -I$(INCPATH) -L$(LIBPATH)
+
+//STRIP=$(PROC)-$(TYPE)-strip
+
+smb:
+	$(CC) $(CFLAGS)  smb.c  -o $@
+
+clean:
+	rm smb
