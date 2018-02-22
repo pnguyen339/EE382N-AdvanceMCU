@@ -119,7 +119,7 @@ unsigned int v;
 
 //int main(int argc, char * argv[]) {
 
-void pm(uint16_t target_addr, int value)
+void pm(uint16_t target_addr, int value){
 /* 
 * This section of code is needed if you are accessing FLASH memory. the mmap() routine
 * seems to leave the flash in a strange state after the first access

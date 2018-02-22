@@ -17,10 +17,14 @@ int main(int argc, char * argv[]) {
     }
     else {
        unsigned int target = strtoul(argv[1], 0, 0);
+       unsigned int loop = strtoul(argv[2], 0, 0);
        switch(target){
-            case 1: break;
-            case 2: break;
-            case 3: break;
+            case 1: test1(loop);
+                    break;
+            case 2: test2(loop);
+                    break;
+            case 3: test3(loop);
+                    break;
            
        }
     }
