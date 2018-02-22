@@ -4,6 +4,6 @@
 
 
 uint32_t dm(uint16_t target_addr);
-void pm(uint16_t target_addr, int value);
+int pm(uint16_t target_addr, int value);
 
 #endif

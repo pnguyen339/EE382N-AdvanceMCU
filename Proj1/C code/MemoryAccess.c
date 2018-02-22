@@ -22,13 +22,14 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  */
- 
+ #include "stdint.h"
 #include "stdio.h"
 #include "stdlib.h"
 #include <sys/mman.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+
 
 #define MAP_SIZE 4096UL
 #define MAP_MASK (MAP_SIZE - 1)
@@ -60,7 +61,7 @@ unsigned int v;
         close(mtd);
 	
 	int fd = open("/dev/mem", O_RDWR|O_SYNC, S_IRUSR);
-	volatile unsigned int *regs, *address ;
+	volatile unsigned int *regs, *address;
 	
 	//unsigned long  value;
 /*
@@ -118,8 +119,7 @@ unsigned int v;
 }
 
 //int main(int argc, char * argv[]) {
-
-void pm(uint16_t target_addr, int value){
+int pm(uint16_t target_addr, int value){
 /* 
 * This section of code is needed if you are accessing FLASH memory. the mmap() routine
 * seems to leave the flash in a strange state after the first access
@@ -150,16 +150,7 @@ unsigned int v;
 	{
 		printf("Unable to open /dev/mem.  Ensure it exists (major=1, minor=1)\n");
 		return -1;
-	}	
-
-	if ((argc != 3) && (argc != 4))
-	{
-		printf("USAGE:  pm (address) (write data) (optional repeat #) \n");
-		close(fd);
-		return -1;
 	}
-		
-	offset = 0;
 	// target_addr = strtoul(argv[1], 0, 0);
     // lp_cnt = 1; // Display at least 1 location
     
@@ -183,7 +174,7 @@ unsigned int v;
 	  	    
 	//   } // End of while loop
 	  
-	address = regs + (((target_addr+ offset) & MAP_MASK)>>2); 	
+	address = regs + (((target_addr) & MAP_MASK)>>2); 	
 	*address = value; 						// perform write command
 	int temp = close(fd);
 	if(temp == -1)
