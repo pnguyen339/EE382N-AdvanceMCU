@@ -1,10 +1,26 @@
+IDIR =./include
 CC=gcc
-CFLAGS=-g -std=c11
-DEPS = MemoryAccess.h
-OBJ = MemoryAccess.o testProgram.o 
+CFLAGS=-I$(IDIR) -g -std=c11
 
-%.o: %.c $(DEPS)
+ODIR=obj
+LDIR =./lib
+
+LIBS=-lm
+
+_DEPS = MemoryAccess.h
+DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
+
+_OBJ = MemoryAccess.o testProgram.o 
+OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
+
+
+$(ODIR)/%.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-proj1: $(OBJ)
-	gcc -o $@ $^ $(CFLAGS)
+Proj1: $(OBJ)
+	gcc -o $@ $^ $(CFLAGS) $(LIBS)
+
+.PHONY: clean
+
+clean:
+	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~
