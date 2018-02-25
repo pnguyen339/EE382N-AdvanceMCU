@@ -35,7 +35,7 @@
 #define MAP_MASK (MAP_SIZE - 1)
 
 //int main(int argc, char * argv[]) {
-uint32_t dm(uint32_t target_addr){
+int dm(uint32_t target_addr){
 /* 
 * This section of code is needed if you are accessing FLASH memory. the mmap() routine
 * seems to leave the flash in a strange state after the first access
@@ -119,7 +119,7 @@ unsigned int v;
 }
 
 //int main(int argc, char * argv[]) {
-void  pm(uint32_t target_addr, int value){
+int  pm(uint32_t target_addr, int value){
 /* 
 * This section of code is needed if you are accessing FLASH memory. the mmap() routine
 * seems to leave the flash in a strange state after the first access
