@@ -84,15 +84,12 @@ void test3(int loop)
 {
     printf("Starting test 2");
 	pm(GPIO, 0);
-    int fd = open("/dev/random", O_RDONLY);
+    int fd = open("/dev/urandom", O_RDONLY);
     if(fd == -1)
 	{
-		printf("Unable to open /dev/random.\n");
+		printf("Unable to open /dev/urandom.\n");
 		return;
 	}
-
-   
-    volatile unsigned int *addr = (unsigned int *)mmap(NULL, 0, PROT_READ, MAP_SHARED, fd, 0);
 
     uint32_t random = 0;
     
@@ -121,12 +118,14 @@ void test3(int loop)
 int main(int argc, char * argv[]) {
 
     if(argc != 3){
-        printf("USAGE: (option) (count)\n");
+        printf("USAGE: (option) (n)\n");
 		printf("Option:\n");
 		printf("	1: run test1 for n count\n");
 		printf("	2: run test2 for n count\n");
 		printf("	3: run test3 for n count\n");
-		printf("	4: reset the LSFR either for (0)32 bit, (1)10 bit, or (2)both\n");
+		printf("	4: reset the the LSFR either for (0)32 bit, (1)10 bit, or (2)both\n");
+		printf("	5: output to GPIO n which gpios\n");
+		printf("	6: reset the GPIO to 0\n");
 	}
     else {
        unsigned int target = strtoul(argv[1], 0, 0);
@@ -150,6 +149,8 @@ int main(int argc, char * argv[]) {
 					pm(LFSR,0);
 				}
 				break;
+	   case 5: pm(GPIO, loop);break;
+	   case 6: pm(GPIO, 0);break;
            
        }
     }
