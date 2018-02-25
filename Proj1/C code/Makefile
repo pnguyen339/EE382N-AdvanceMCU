@@ -1,10 +1,10 @@
 CC=gcc
-CFLAGS=-I, -g, -Wall.
+CFLAGS=-g -std=c11
 DEPS = MemoryAccess.h
 OBJ = MemoryAccess.o testProgram.o 
 
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-hellomake: $(OBJ)
+proj1: $(OBJ)
 	gcc -o $@ $^ $(CFLAGS)
