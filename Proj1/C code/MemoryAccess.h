@@ -3,7 +3,7 @@
 #include <stdint.h>
 
 
-uint32_t dm(uint16_t target_addr);
-int pm(uint16_t target_addr, int value);
+uint32_t dm(uint32_t target_addr);
+void pm(uint32_t target_addr, int value);
 
 #endif

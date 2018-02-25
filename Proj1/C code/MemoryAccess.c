@@ -35,7 +35,7 @@
 #define MAP_MASK (MAP_SIZE - 1)
 
 //int main(int argc, char * argv[]) {
-uint32_t dm(uint16_t target_addr){
+uint32_t dm(uint32_t target_addr){
 /* 
 * This section of code is needed if you are accessing FLASH memory. the mmap() routine
 * seems to leave the flash in a strange state after the first access
@@ -104,7 +104,7 @@ unsigned int v;
 	// } // End while loop
 	
     address = regs + (((target_addr) & MAP_MASK)>>2);    	
-    printf(" = 0x%.8x\n", *address);		// display register value
+    //printf(" = 0x%.8x\n", *address);		// display register value
 	
     int temp = close(fd);
 	if(temp == -1)
@@ -119,7 +119,7 @@ unsigned int v;
 }
 
 //int main(int argc, char * argv[]) {
-int pm(uint16_t target_addr, int value){
+void  pm(uint32_t target_addr, int value){
 /* 
 * This section of code is needed if you are accessing FLASH memory. the mmap() routine
 * seems to leave the flash in a strange state after the first access
@@ -156,7 +156,7 @@ unsigned int v;
     
     // if (argc == 4) 	lp_cnt = strtoul(argv[3], 0, 0);
 	
-	// regs = (unsigned int *)mmap(NULL, MAP_SIZE, PROT_READ|PROT_WRITE, MAP_SHARED, fd, target_addr & ~MAP_MASK);		
+	regs = (unsigned int *)mmap(NULL, MAP_SIZE, PROT_READ|PROT_WRITE, MAP_SHARED, fd, target_addr & ~MAP_MASK);		
 
     // while (lp_cnt) {
     
