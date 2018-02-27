@@ -22,9 +22,11 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  */
- #include "stdint.h"
-#include "stdio.h"
-#include "stdlib.h"
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include "MemoryAccess.h"
 #include <sys/mman.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -35,13 +37,13 @@
 #define MAP_MASK (MAP_SIZE - 1)
 
 //int main(int argc, char * argv[]) {
-int dm(uint32_t target_addr){
+uint32_t dm(uint32_t target_addr){
 /* 
 * This section of code is needed if you are accessing FLASH memory. the mmap() routine
 * seems to leave the flash in a strange state after the first access
 */
 
-unsigned int v;
+uint32_t v;
         int mtd= open("/dev/mmcblk0p1", O_RDONLY|O_SYNC);
 /*
         if(mtd){ 
@@ -119,13 +121,13 @@ unsigned int v;
 }
 
 //int main(int argc, char * argv[]) {
-int  pm(uint32_t target_addr, int value){
+uint32_t  pm(uint32_t target_addr, uint32_t value){
 /* 
 * This section of code is needed if you are accessing FLASH memory. the mmap() routine
 * seems to leave the flash in a strange state after the first access
 */
 
-unsigned int v;
+uint32_t v;
         int mtd= open("/dev/mmcblk0p1", O_RDONLY|O_SYNC);
         if(!mtd){
           printf("Unable to open /dev/mmcblk0p1.  Ensure it exists (major=31, minor=0)\n");
